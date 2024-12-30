@@ -1,3 +1,9 @@
+document.querySelector("#btnSearch").addEventListener("click", function () {
+  let text = document.querySelector("#txtSearch").value;
+  console.log(text); //Turkey
+  displayCountry(text);
+});
+
 function displayCountry(country) {
   const request = new XMLHttpRequest();
 
@@ -47,9 +53,7 @@ function setCountry(data) {
             </div>`;
 
     document
-      .querySelector(".container .row")
-      .insertAdjacentHTML("beforeend", html);
+      .querySelector(".container .showSearch .searchResult")
+      .insertAdjacentHTML("afterbegin", html);
   }
 }
-
-displayCountry("Turkey");
